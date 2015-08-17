@@ -1,0 +1,153 @@
+object Form1: TForm1
+  Left = 1048
+  Height = 783
+  Top = 122
+  Width = 851
+  Caption = 'Form1'
+  ClientHeight = 783
+  ClientWidth = 851
+  OnActivate = FormActivate
+  LCLVersion = '1.2.4.0'
+  object Edit1: TEdit
+    Left = 96
+    Height = 23
+    Top = 8
+    Width = 80
+    TabOrder = 0
+  end
+  object Shape1: TShape
+    Left = 184
+    Height = 49
+    Top = 488
+    Width = 52
+    Brush.Color = clBlue
+  end
+  object Edit2: TEdit
+    Left = 96
+    Height = 23
+    Top = 72
+    Width = 80
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    Left = 144
+    Height = 23
+    Top = 40
+    Width = 80
+    TabOrder = 2
+  end
+  object Edit4: TEdit
+    Left = 48
+    Height = 23
+    Top = 40
+    Width = 80
+    TabOrder = 3
+  end
+  object Button1: TButton
+    Left = 240
+    Height = 87
+    Top = 8
+    Width = 96
+    Caption = 'Tastatura'
+    OnKeyDown = Button1KeyDown
+    OnKeyUp = Button1KeyUp
+    TabOrder = 4
+  end
+  object Edit5: TEdit
+    Left = 440
+    Height = 23
+    Top = 8
+    Width = 80
+    TabOrder = 5
+  end
+  object Edit6: TEdit
+    Left = 72
+    Height = 23
+    Top = 144
+    Width = 80
+    TabOrder = 6
+  end
+  object Edit7: TEdit
+    Left = 152
+    Height = 23
+    Top = 120
+    Width = 80
+    TabOrder = 7
+  end
+  object Shape2: TShape
+    Left = 0
+    Height = 79
+    Top = 704
+    Width = 851
+    Brush.Color = clGreen
+  end
+  object Edit8: TEdit
+    Left = 352
+    Height = 23
+    Top = 8
+    Width = 80
+    TabOrder = 8
+  end
+  object Edit9: TEdit
+    Left = 528
+    Height = 23
+    Top = 8
+    Width = 80
+    TabOrder = 9
+  end
+  object Edit10: TEdit
+    Left = 440
+    Height = 23
+    Top = 48
+    Width = 80
+    TabOrder = 10
+  end
+  object Edit11: TEdit
+    Left = 440
+    Height = 23
+    Top = 72
+    Width = 80
+    TabOrder = 11
+  end
+  object Edit12: TEdit
+    Left = 528
+    Height = 23
+    Top = 56
+    Width = 80
+    TabOrder = 12
+  end
+  object Shape3: TShape
+    Left = 200
+    Height = 128
+    Top = 576
+    Width = 68
+    Brush.Color = 235228
+  end
+  object Edit13: TEdit
+    Left = 72
+    Height = 23
+    Top = 120
+    Width = 80
+    TabOrder = 13
+  end
+  object Edit14: TEdit
+    Left = 152
+    Height = 23
+    Top = 144
+    Width = 80
+    TabOrder = 14
+  end
+  object Proba1: TTimer
+    Enabled = False
+    Interval = 10
+    OnTimer = Proba1Timer
+    left = 8
+    top = 8
+  end
+  object Proba2: TTimer
+    Interval = 10
+    OnTimer = Proba2Timer
+    left = 8
+    top = 64
+  end
+end
