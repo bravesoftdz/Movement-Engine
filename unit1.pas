@@ -36,6 +36,7 @@ type
     procedure Button1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure Button1KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure Proba1Timer(Sender: TObject);
     procedure Proba2Timer(Sender: TObject);
   private
@@ -61,9 +62,7 @@ var
   KFL: Boolean;
 
 implementation
-
 {$R *.lfm}
-
 { TForm1 }
 
 procedure TForm1.FormActivate(Sender: TObject);
@@ -73,6 +72,11 @@ begin
   Jump:=24;
   Slide:=2;
   Grounded:= False
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+
 end;
 
 procedure TForm1.Proba1Timer(Sender: TObject);
@@ -256,6 +260,7 @@ begin
       P1U:=Round(Jump);
       edit5.text:='';
     end;
+
   //Giving Momentum RIGHT to P1 from Keyboard key(s): D (68)
   if (edit9.text = '68') then P1R:=Round(MovementRL);
 
@@ -336,12 +341,12 @@ begin
       While (Counter <= P1D) AND (P1D > 0) DO
         if ((shape1.left + shape1.width < shape2.Left + 1) OR
            (shape1.left > shape2.left + shape2.width - 1) OR
-           (Shape1.top + shape1.Height < shape2.top + 1) OR
+           (Shape1.top + shape1.Height < shape2.top) OR
            (shape1.top >= Shape2.top + shape2.Height - 1))
            AND
            ((shape1.left + shape1.width < shape3.Left + 1) OR
            (shape1.left > shape3.left + shape3.width - 1) OR
-           (Shape1.top + shape1.Height < shape3.top + 1) OR
+           (Shape1.top + shape1.Height < shape3.top) OR
            (shape1.top >= Shape3.top + shape3.Height - 1)) then
         Begin
           Shape1.Top:= Shape1.Top + 1;
@@ -371,9 +376,6 @@ begin
           Begin
             Shape1.Left:= Shape1.Left + 1;
             Counter:= Counter + 1;
-            if (shape1.left > shape2.Left + shape2.Width) OR
-               (shape1.left > shape3.Left + shape3.Width) then
-              Grounded:=false
           end
           else
           Begin
@@ -401,9 +403,6 @@ begin
           Begin
             Shape1.Left:= Shape1.Left - 1;
             Counter:= Counter + 1;
-            if (shape1.left + shape1.Width < shape3.Left) OR
-               (shape1.left + shape1.Width < shape3.Left) then
-              Grounded:=false
           end
           else
           Begin
